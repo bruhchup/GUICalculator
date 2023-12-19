@@ -4,8 +4,7 @@ from customtkinter import *
 
 root = CTk()
 
-
-set_default_color_theme('green')
+ttk.Style().theme_use('clam')
 
 #defines a frame for the Entry
 efrm = ttk.Frame(root, padding = 0)
