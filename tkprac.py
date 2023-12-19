@@ -3,36 +3,40 @@ from tkinter import ttk
 
 root = Tk()
 
+#defines a frame for the Entry
 efrm = ttk.Frame(root, padding = 0)
 efrm.grid()
+
+#defines a frame for the buttons
 frm = ttk.Frame(root, padding = 0)
 frm.grid()
 
+#this is the text box
 e = Entry(efrm, width = 50, borderwidth= 5)
 e.grid(row = 0, column = 0)
-e.config(state='disabled', disabledforeground='black')
 
-def normal():
-    '''
-    Changes the state of the Entry to normal. This is so that the input from the buttons can be passed to the Entry.
-    When buttons are not being pressed, the state is disabled, which presents users from manually entering characters
-    into the entry widget.
-    '''
-    e.config(state='normal')
+'''
+The line below disables the ability to input text via the keyboard into the Entry object.
+the state is used to disable input, disabledforeground prevents the text from defaulting
+to the color gray when disabled
+'''
+e.config(state='disabled', disabledforeground='black')
 
 def add_button(x):
     '''
-    Performs the function of the button pressed
+    @param x: the character that represents the button
+    
+    adds the pressed button to the Entry text
     '''
     e.config(state='normal')
     curr = e.get()
     e.delete(0, END)
     e.insert(0, str(curr) + str(x))
     e.config(state='disabled')
-    
+
 def answer():
     '''
-    Evaluates the string inside the entry widget
+    evaluates the string inside the entry widget
     '''
     e.config(state='normal')
     ans = eval(e.get())
@@ -41,6 +45,9 @@ def answer():
     e.config(state='disabled')
 
 def clear():
+    '''
+    clears the Entry text
+    '''
     e.config(state='normal')
     e.delete(0, END)
     e.config(state='disabled')
@@ -67,8 +74,6 @@ def buttons():
     clr = ttk.Button(frm, text="clr", command =lambda: clear()).grid(column=0, row=4)
     equals = ttk.Button(frm, text="=", command =lambda: answer()).grid(column=2, row=4)
 
-    
 buttons()
-
 
 root.mainloop()
