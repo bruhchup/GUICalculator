@@ -68,7 +68,7 @@ def buttons():
     two = Button(frm, text="2", height = 2, width = 5, font = 'Arial 24', command =lambda: add_button('2')).grid(column=1, row=3)
     three = Button(frm, text="3", height = 2, width = 5, font = 'Arial 24', command =lambda: add_button('3')).grid(column=2, row=3)
     four = Button(frm, text="4", height = 2, width = 5, font = 'Arial 24', command =lambda: add_button('4')).grid(column=0, row=2)
-    five = Button(frm, text="2", height = 2, width = 5, font = 'Arial 24', command =lambda: add_button('2')).grid(column=1, row=2)
+    five = Button(frm, text="5", height = 2, width = 5, font = 'Arial 24', command =lambda: add_button('5')).grid(column=1, row=2)
     six = Button(frm, text="6", height = 2, width = 5, font = 'Arial 24', command =lambda: add_button('6')).grid(column=2, row=2)
     seven = Button(frm, text="7", height = 2, width = 5, font = 'Arial 24', command =lambda: add_button('7')).grid(column=2, row=1)
     eight = Button(frm, text="8", height = 2, width = 5, font = 'Arial 24', command =lambda: add_button('8')).grid(column=1, row=1)
